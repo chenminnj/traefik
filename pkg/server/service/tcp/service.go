@@ -45,7 +45,8 @@ func (m *Manager) BuildTCP(rootCtx context.Context, serviceName string) (tcp.Han
 	logger := log.FromContext(ctx)
 	switch {
 	case conf.LoadBalancer != nil:
-		loadBalancer := tcp.NewWRRLoadBalancer()
+		//loadBalancer := tcp.NewWRRLoadBalancer()
+		loadBalancer := tcp.NewHashLoadBalancer()
 
 		if conf.LoadBalancer.TerminationDelay == nil {
 			defaultTerminationDelay := 100

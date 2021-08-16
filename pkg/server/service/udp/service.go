@@ -44,7 +44,8 @@ func (m *Manager) BuildUDP(rootCtx context.Context, serviceName string) (udp.Han
 	logger := log.FromContext(ctx)
 	switch {
 	case conf.LoadBalancer != nil:
-		loadBalancer := udp.NewWRRLoadBalancer()
+		//loadBalancer := udp.NewWRRLoadBalancer()
+		loadBalancer := udp.NewHashLoadBalancer()
 
 		for name, server := range conf.LoadBalancer.Servers {
 			if _, _, err := net.SplitHostPort(server.Address); err != nil {
