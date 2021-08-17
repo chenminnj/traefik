@@ -10,7 +10,7 @@ COPY package.json $WEBUI_DIR/
 COPY package-lock.json $WEBUI_DIR/
 
 WORKDIR $WEBUI_DIR
-RUN npm install
+RUN npm --registry http://registry.npm.taobao.org install
 
 COPY . $WEBUI_DIR/
 
