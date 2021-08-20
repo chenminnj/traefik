@@ -25,8 +25,8 @@ import (
 	"github.com/traefik/traefik/v2/pkg/server/provider"
 	"github.com/traefik/traefik/v2/pkg/server/service/loadbalancer/mirror"
 	"github.com/traefik/traefik/v2/pkg/server/service/loadbalancer/wrr"
-	"github.com/vulcand/oxy/roundrobin"
-	"github.com/vulcand/oxy/roundrobin/stickycookie"
+	"github.com/chenminnj/oxy/roundrobin"
+	"github.com/chenminnj/oxy/roundrobin/stickycookie"
 )
 
 const (
